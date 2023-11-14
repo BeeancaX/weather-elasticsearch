@@ -22,3 +22,76 @@ Data Ingestion: The collected data is ingested into the MySQL database using the
 API Development: The Spring Boot application provides RESTful endpoints for data ingestion and retrieval. It processes incoming requests, interacts with the database, and responds with data or updates.
 User Interface: Users access the web interface to retrieve and visualize data. They can view weather conditions, forecasts, and pollution index information based on their location.
 
+API DESIGN
+
+Weather and Pollution Data API
+
+1. Get Current Weather and Pollution Data
+
+Endpoint: /api/data/current
+Method: GET
+Parameters:
+location (string): The location for which to retrieve current data.
+Response:
+{
+  "location": "City, Country",
+  "weather": {
+    "temperature": 25.5,
+    "humidity": 60,
+    "conditions": "Clear"
+  },
+  "pollution": {
+    "index": 35,
+    "main_pollutant": "PM2.5"
+  }
+}
+
+
+2. Get Weather Forecast
+
+Endpoint: /api/data/forecast
+Method: GET
+Parameters:
+location (string): The location for which to retrieve the forecast.
+Response:
+{
+  "location": "City, Country",
+  "forecast": [
+    {
+      "date": "2023-11-15",
+      "weather": {
+        "temperature": {
+          "min": 20,
+          "max": 28
+        },
+        "conditions": "Partly Cloudy"
+      },
+      "pollution": {
+        "index": 40,
+        "main_pollutant": "O3"
+      }
+    },
+    }
+    }
+3. Get Historical Data
+
+Endpoint: /api/data/history
+Method: GET
+Parameters:
+location (string): The location for which to retrieve historical data.
+start_date (string): The start date of the historical data (format: YYYY-MM-DD).
+end_date (string): The end date of the historical data (format: YYYY-MM-DD).
+
+4. Data Ingestion Endpoints
+
+4.1. Ingest Current Weather and Pollution Data
+
+Endpoint: /api/data/current/ingest
+Method: POST
+
+4.2. Ingest Weather Forecast Data
+
+Endpoint: /api/data/forecast/ingest
+Method: POST
+
+

@@ -22,6 +22,17 @@ Data Ingestion: The collected data is ingested into the MySQL database using the
 API Development: The Spring Boot application provides RESTful endpoints for data ingestion and retrieval. It processes incoming requests, interacts with the database, and responds with data or updates.
 User Interface: Users access the web interface to retrieve and visualize data. They can view weather conditions, forecasts, and pollution index information based on their location.
 
+TEHNOLOGIES 
+
+MySQL Database:
+MySQL has been chosen as the database to ensure efficient and scalable storage of data. MySQL provides a robust relational model and support for the efficient manipulation of large volumes of data. This choice is based on the need for a structured and scalable approach to handle the diverse weather and pollution data collected by the application. The relational model of MySQL allows for organized data storage and retrieval, essential for a project dealing with varied data types.
+
+Java Spring Boot:
+Spring Boot has been selected for the development of the backend due to its ease of creating scalable RESTful web services. This choice provides a robust and user-friendly framework for managing the logic of the application. Spring Boot simplifies the development process, making it easier to build, deploy, and scale applications. The framework's features, such as auto-configuration and a wide range of built-in modules, contribute to the efficiency and scalability of the backend.
+
+RESTful API:
+The REST architecture approach has been adopted for the development of APIs due to its simplicity, scalability, and ease of understanding. RESTful APIs are well-suited for communication between different components of the project, providing a standardized and straightforward way to transmit data. This choice aligns with the goal of creating a user-friendly web application, as RESTful APIs are known for their simplicity and ease of integration. The use of RESTful principles contributes to a clear and organized communication structure within the system.
+
 API DESIGN
 
 Weather and Pollution Data API
@@ -32,19 +43,8 @@ Endpoint: /api/data/current
 Method: GET
 Parameters:
 location (string): The location for which to retrieve current data.
-Response:
-{
-  "location": "City, Country",
-  "weather": {
-    "temperature": 25.5,
-    "humidity": 60,
-    "conditions": "Clear"
-  },
-  "pollution": {
-    "index": 35,
-    "main_pollutant": "PM2.5"
-  }
-}
+Response:Current weather and pollution data for the specified location.
+
 
 
 2. Get Weather Forecast
@@ -53,26 +53,8 @@ Endpoint: /api/data/forecast
 Method: GET
 Parameters:
 location (string): The location for which to retrieve the forecast.
-Response:
-{
-  "location": "City, Country",
-  "forecast": [
-    {
-      "date": "2023-11-15",
-      "weather": {
-        "temperature": {
-          "min": 20,
-          "max": 28
-        },
-        "conditions": "Partly Cloudy"
-      },
-      "pollution": {
-        "index": 40,
-        "main_pollutant": "O3"
-      }
-    },
-    }
-    }
+Response: Weather forecast for the specified location.
+
 3. Get Historical Data
 
 Endpoint: /api/data/history
@@ -81,6 +63,7 @@ Parameters:
 location (string): The location for which to retrieve historical data.
 start_date (string): The start date of the historical data (format: YYYY-MM-DD).
 end_date (string): The end date of the historical data (format: YYYY-MM-DD).
+
 
 4. Data Ingestion Endpoints
 
@@ -92,6 +75,11 @@ Method: POST
 4.2. Ingest Weather Forecast Data
 
 Endpoint: /api/data/forecast/ingest
+Method: POST
+
+5. Ingest Weather Forecast Data
+Endpoint: /api/data/forecast/ingest
+
 Method: POST
 
 

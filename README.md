@@ -43,43 +43,66 @@ Weather and Pollution Data API
 
 1. Get Current Weather and Pollution Data
 
-Endpoint: /api/data/current
+Endpoint: /api/current-data
 Method: GET
 Parameters:
-location (string): The location for which to retrieve current data.
-Response:Current weather and pollution data for the specified location.
-
+city (string, required): The name of the city.
+country (string, required): The name of the country.
 
 
 2. Get Weather Forecast
 
-Endpoint: /api/data/forecast
+Get Weather Forecast Data
+Endpoint: /api/forecast-data
 Method: GET
 Parameters:
-location (string): The location for which to retrieve the forecast.
-Response: Weather forecast for the specified location.
+city (string, required): The name of the city.
+country (string, required): The name of the country.
 
 3. Get Historical Data
 
-Endpoint: /api/data/history
+Get Historical Weather Data
+Endpoint: /api/history-data
 Method: GET
 Parameters:
-location (string): The location for which to retrieve historical data.
-start_date (string): The start date of the historical data (format: YYYY-MM-DD).
-end_date (string): The end date of the historical data (format: YYYY-MM-DD).
+city (string, required): The name of the city.
+country (string, required): The name of the country.
+timestamp (string, required, format: YYYY-MM-DD): The date.
 
 
 4. Data Ingestion Endpoints
 
-4.1. Ingest Current Weather and Pollution Data
+4.1. Ingest Weather and Pollution Data
 
-Endpoint: /api/data/current/ingest
+Endpoint: /api/current-data/ingest
 Method: POST
+{
+  "city": "CityName",
+  "country": "CountryName",
+  "temperature": 25.5,
+  "humidity": 60,
+  "pollution_index": 45,
+  "timestamp": "2023-04-01"
+}
 
 4.2. Ingest Weather Forecast Data
 
-Endpoint: /api/data/forecast/ingest
-Method: POST
+{
+  "city": "CityName",
+  "country": "CountryName",
+  "forecast": [
+    {
+      "temperature": 26,
+      "humidity": 65,
+      "timestamp": "2023-04-01"
+    },
+    {
+      "temperature": 27,
+      "humidity": 70,
+      "timestamp": "2023-04-01"
+    }
+  ]
+}
 
 5. Ingest Weather Forecast Data
 Endpoint: /api/data/forecast/ingest

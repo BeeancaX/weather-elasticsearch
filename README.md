@@ -86,6 +86,8 @@ Method: POST
 }
 
 4.2. Ingest Weather Forecast Data
+Endpoint: /api/current-data/ingest
+Method: POST
 
 {
   "city": "CityName",
@@ -103,10 +105,3 @@ Method: POST
     }
   ]
 }
-
-5. Ingest Weather Forecast Data
-Endpoint: /api/data/forecast/ingest
-
-Method: POST
-
-

@@ -1,0 +1,14 @@
+PUT /weather_data
+{
+  "mappings": {
+    "properties": {
+      "location": { "type": "geo_point" },
+      "timestamp": { "type": "date" },
+      "temperature": { "type": "float" },
+      "humidity": { "type": "float" },
+      "pollution_index": { "type": "integer" }
+      // Add more generic fields as needed
+    }
+  }
+}
+

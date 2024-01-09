@@ -12,14 +12,14 @@ Elasticsearch is will be the database used for data storage, search, and analysi
 2.2	Java Spring Boot
 The Spring Boot framework is used to build the back-end of the project. It simplifies the development of robust, scalable, and RESTful web services.
 2.3	RESTful API
-A RESTful API is developed to interact with the MySQL database. It exposes endpoints for data ingestion, retrieval, and analysis.
+A RESTful API is developed to interact with Elasticsearch. It exposes endpoints for data ingestion, retrieval, and analysis.
 2.4	User Interface
 A user-friendly web interface is designed to allow the user to access and visualize weather and pollution data. Users can view weather conditions, forecasts, and pollution index information for any selected place and location, as well as see history or predictions for the following days. 
 
 3.	Project Workflow
    
 Data Collection: Weather and pollution data are collected from external sources. These sources provide real-time and forecasted information.
-Data Ingestion: The collected data is ingested into the MySQL database using the RESTful API endpoints.
+Data Ingestion: The collected data is ingested into Elasticsearch using the RESTful API endpoints.
 API Development: The Spring Boot application provides RESTful endpoints for data ingestion and retrieval. It processes incoming requests, interacts with the database, and responds with data or updates.
 User Interface: Users access the web interface to retrieve and visualize data. They can view weather conditions, forecasts, and pollution index information based on their location.
 

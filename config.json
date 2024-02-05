@@ -1,0 +1,8 @@
+{
+    "appsearch":
+    {
+        "base_endpoint": ,
+        "api_key": 
+        "engine_name":"weather"
+    }
+}

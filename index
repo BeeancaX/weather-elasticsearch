@@ -1,4 +1,4 @@
-PUT /weather_data/_doc/1
+PUT /search-weather/_doc/1
 {
   "mappings": {
     "properties": {
@@ -12,7 +12,7 @@ PUT /weather_data/_doc/1
   }
 }
 
- "weather_data" index with specified mappings:
+ "search-weathe" index with specified mappings:
 
 "location": A field of type "geo_point" for storing geographical coordinates.
 "timestamp": A field of type "date" for storing date and time information.

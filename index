@@ -1,4 +1,4 @@
-PUT /weather_data
+PUT /weather_data/_doc/1
 {
   "mappings": {
     "properties": {
